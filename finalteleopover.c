@@ -10,6 +10,7 @@
 #pragma config(Motor,  mtr_S2_C1_2,     R2,      tmotorTetrix, openLoop, reversed)
 
 #include "JoystickDriver.c"  //Include file to "handle" the Bluetooth messages.
+
 /////////////////////////
 //   Easy Button Names
 /////////////////////////
@@ -26,6 +27,17 @@ int select = joy1Btn(9);
 int start = joy1Btn(10);
 int lThumb = joy1Btn(11);
 int rThumb = joy1Btn(12);
+
+////////////////////////
+//  dPad Buttons
+////////////////////////
+
+int dOad = joystick.joy1_TopHat;
+
+int up = 0;
+int right = 2;
+int down = 4;
+int left = 6;
 
 void initializeRobot()
 {
@@ -69,19 +81,19 @@ task main(){
 		{
 		getJoystickSettings(joystick);
 
-		if (joystick.joy1_TopHat == 0){
+		if (dPad == up){
 		movement(-95);
  		}//moves forward
 
-		else if (joystick.joy1_TopHat == 2){
+		else if (dPad == right){
 		rotateRight(95);
   		}//moves cw
 
-  		else if (joystick.joy1_TopHat == 4){
+  		else if (dPad == down){
 		movement(95);
   		}//moves backward
 
-  		else if (joystick.joy1_TopHat == 6){
+  		else if (dPad == left){
   		rotateLeft(95);
   		}//moves ccw
 
@@ -93,14 +105,7 @@ task main(){
 				motor[R2] = joystick.joy1_y2 * .78125;
 			}
 
-			else{
-				motor[L1] = 0;
-				motor[L2] = 0;
-				motor[R1] = 0;
-				motor[R2] = 0;
-			}
-
-			if (rClick == 1){
+			else if (rClick == 1){
 				motor[lift] = 100;
 			}
 
@@ -117,6 +122,9 @@ task main(){
 			}
 
   			else{
+  				motor[L1] = 0;
+				motor[L2] = 0;
+				motor[R1] = 0;
   				motor[lift]= 0;
   				motor[sweep] = 0;
   			}
