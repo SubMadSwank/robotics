@@ -60,7 +60,7 @@ task main(){
 
 		else if (joystick.joy1_TopHat == 2){
 		rotateRight(95);
-  		}//moves cw
+  		}//moves clockwise
 
   		else if (joystick.joy1_TopHat == 4){
 		robotMotion(95);
@@ -68,7 +68,7 @@ task main(){
 
   		else if (joystick.joy1_TopHat == 6){
   		rotateLeft(95);
-  		}//moves ccw
+  		}//moves counterclockwise
 
   		else{
   			if (abs(joystick.joy1_y1)  > 7 || abs(joystick.joy1_y2) > 7){ //creates an input threshold that must be passed before code goes into effect
