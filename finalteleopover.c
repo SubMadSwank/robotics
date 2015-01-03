@@ -1,6 +1,7 @@
 #pragma config(Hubs,  S1, HTMotor,  HTMotor,  none,     none)
 #pragma config(Hubs,  S2, HTMotor,  HTServo,  none,     none)
 #pragma config(Sensor, S3,     ir,             sensorI2CCustom)
+#pragma config(Motor,  motorA,          pull,          tmotorNXT, PIDControl, encoder)
 #pragma config(Motor,  mtr_S1_C1_1,     leftTop,       tmotorTetrix, openLoop, reversed)
 #pragma config(Motor,  mtr_S1_C1_2,     leftBot,       tmotorTetrix, openLoop, reversed)
 #pragma config(Motor,  mtr_S1_C2_1,     lift,          tmotorTetrix, openLoop, encoder)
@@ -108,6 +109,19 @@ task main(){
 					servo[servo1] = 90;
 				}
 			}
+
+			else if(joy1Btn(5) == 1){
+				motor[pull] = 50;
+				wait1Msec(200);
+				motor[pull] = 0;
+			}
+
+			else if(joy1Btn(7) == 1){
+				motor[pull] = -50;
+				wait1Msec(200);
+				motor[pull] = 0;
+			}
+
 
   			else{
  				motor[leftTop] = 0;
