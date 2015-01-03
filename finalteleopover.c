@@ -87,24 +87,24 @@ task main(){
 
 			if (joy1Btn(6) == 1){
 				motor[lift] = 90;
-			}
+			} //when right bumper is pressed, the telescoping lift is raised
 
 			else if (joy1Btn(8) == 1){
 				motor[lift] = -90;
-			}
+			} //when right trigger is pressed, the telescoping lift is lowered
 
 			else if (joy1Btn(2) == 1){
 				motor[sweep] = 100;
-			}
+			} //when "a" is pressed, the sweeper spins
 
 			else if (joy1Btn(3) == 1){
 				motor[sweep] = -100;
-			}
+			} //when "b" is pressed, the sweeper spins in the opposite direction
 
   			else{
   				motor[lift]= 0;
   				motor[sweep] = 0;
-  			}
+  			} //if nothing is pressed, the motors do not move
  		}
 	}
 }
