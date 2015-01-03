@@ -55,19 +55,19 @@ task main(){
 		getJoystickSettings(joystick);
 
 		if (joystick.joy1_TopHat == 0){
-		robotMotion(-95);
+			robotMotion(-95);
  		}//moves forward
 
 		else if (joystick.joy1_TopHat == 2){
-		rotateRight(95);
+			rotateRight(95);
   		}//moves clockwise
 
   		else if (joystick.joy1_TopHat == 4){
-		robotMotion(95);
+			robotMotion(95);
   		}//moves backward
 
   		else if (joystick.joy1_TopHat == 6){
-  		rotateLeft(95);
+  			rotateLeft(95);
   		}//moves counterclockwise
 
   		else{
@@ -77,13 +77,6 @@ task main(){
 				motor[rightTop] = -joystick.joy1_y2 * .78125;
 				motor[rightBot] = -joystick.joy1_y2 * .78125;
 			} //changes input range from the motor to something compatible with the joystick
-
-			else{
-				motor[leftTop] = 0;
-				motor[leftBot] = 0;
-				motor[rightTop] = 0;
-				motor[rightBot] = 0;
-			}
 
 			if (joy1Btn(6) == 1){
 				motor[lift] = 90;
@@ -102,6 +95,10 @@ task main(){
 			}
 
   			else{
+ 				motor[leftTop] = 0;
+				motor[leftBot] = 0;
+				motor[rightTop] = 0;
+				motor[rightBot] = 0;
   				motor[lift]= 0;
   				motor[sweep] = 0;
   			}
