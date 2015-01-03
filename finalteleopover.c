@@ -4,7 +4,7 @@
 #pragma config(Sensor, S2,     ,               sensorI2CMuxController)
 #pragma config(Motor,  mtr_S1_C1_1,     leftTop,       tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C1_2,     leftBot,       tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S1_C2_1,     lift,          tmotorTetrix, openLoop, reversed)
+#pragma config(Motor,  mtr_S1_C2_1,     lift,          tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C2_2,     sweep,         tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S2_C1_1,     rightTop,      tmotorTetrix, openLoop, reversed)
 #pragma config(Motor,  mtr_S2_C1_2,     rightBot,      tmotorTetrix, openLoop, reversed)
@@ -71,10 +71,10 @@ task main(){
 
   		else{
   			if (abs(joystick.joy1_y1)  > 7 || abs(joystick.joy1_y2) > 7){
-  				motor[leftTop] = -joystick.joy1_y1 * .78125;
-				motor[leftBot] = -joystick.joy1_y1 * .78125;
-				motor[rightTop] = -joystick.joy1_y2 * .78125;
-				motor[rightBot] = -joystick.joy1_y2 * .78125;
+  				motor[leftTop] = joystick.joy1_y1 * .78125;
+				motor[leftBot] = joystick.joy1_y1 * .78125;
+				motor[rightTop] = joystick.joy1_y2 * .78125;
+				motor[rightBot] = joystick.joy1_y2 * .78125;
 			}
 
 			else{
