@@ -7,4 +7,4 @@ This is led by Fern, message him if you have any question on the code.
 
 Please create a new branch when altering code unless asked by Fern.
 
-Also no fuckboys allowed, that means you Ryan fuck off. gggggggggggggggggg
+Also no fuckboys allowed, that means you Ryan fuck off.
