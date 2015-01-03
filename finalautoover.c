@@ -20,6 +20,11 @@
 
 #include "hitechnic-irseeker-v2.h"
 
+int _dirAC = 0;
+int acS1, acS2, acS3, acS4, acS5 = 0;
+tHTIRS2DSPMode _mode = DSP_1200;
+
+
 void initializeRobot() //sets motor encoders to 0
 {
 		nMotorEncoder[leftTop] = 0;
