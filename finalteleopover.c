@@ -71,12 +71,12 @@ task main(){
   		}//moves ccw
 
   		else{
-  			if (abs(joystick.joy1_y1)  > 7 || abs(joystick.joy1_y2) > 7){
+  			if (abs(joystick.joy1_y1)  > 7 || abs(joystick.joy1_y2) > 7){ //creates an input threshold that must be passed before code goes into effect
   				motor[leftTop] = -joystick.joy1_y1 * .78125;
 				motor[leftBot] = -joystick.joy1_y1 * .78125;
 				motor[rightTop] = -joystick.joy1_y2 * .78125;
 				motor[rightBot] = -joystick.joy1_y2 * .78125;
-			}
+			} //changes input range from the motor to something compatible with the joystick
 
 			else{
 				motor[leftTop] = 0;
