@@ -1,10 +1,10 @@
-robotics
+FTC 6357 Coding
 ========
+Welcome guys, if you're here then you're probably a coder or someone from reddit.
 
-robotics-2014
-please make a new fork if youre fucking around this is master we dont fuck around here
-gg boys good luck
+This is team 6357's code for the 2014-2015 season for FTC, Cascade Effect.
+This is led by Fern, message him if you have any question on the code.
 
-also,
-  no fuckboys allowed 
-  that means u ryan fuck off 
+Please create a new branch when altering code unless asked by Fern.
+
+Also no fuckboys allowed, that means you Ryan fuck off.
