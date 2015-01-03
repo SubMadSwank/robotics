@@ -2,12 +2,12 @@
 #pragma config(Hubs,  S2, HTMotor,  none,     none,     none)
 #pragma config(Sensor, S1,     ,               sensorI2CMuxController)
 #pragma config(Sensor, S2,     ,               sensorI2CMuxController)
-#pragma config(Motor,  mtr_S1_C1_1,     leftTop,       tmotorTetrix, openLoop, reversed)
-#pragma config(Motor,  mtr_S1_C1_2,     leftBot,       tmotorTetrix, openLoop, reversed)
-#pragma config(Motor,  mtr_S1_C2_1,     lift,          tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S1_C2_2,     lift2,         tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S2_C1_1,     rightTop,      tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S2_C1_2,     rightBot,      tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C1_1,     leftTop,       tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C1_2,     leftBot,       tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C2_1,     lift,          tmotorTetrix, openLoop, reversed)
+#pragma config(Motor,  mtr_S1_C2_2,     sweep,         tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S2_C1_1,     rightTop,      tmotorTetrix, openLoop, reversed)
+#pragma config(Motor,  mtr_S2_C1_2,     rightBot,      tmotorTetrix, openLoop, reversed)
 
 #include "JoystickDriver.c"  //Include file to "handle" the Bluetooth messages.
 
@@ -93,16 +93,16 @@ task main(){
 			}
 
 			else if (joy1Btn(2) == 1){
-				motor[lift2] = 100;
+				motor[sweep] = 100;
 			}
 
 			else if (joy1Btn(3) == 1){
-				motor[lift2] = -100;
+				motor[sweep] = -100;
 			}
 
   			else{
   				motor[lift]= 0;
-  				motor[lift2] = 0;
+  				motor[sweep] = 0;
   			}
  		}
 	}
