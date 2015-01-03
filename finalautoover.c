@@ -18,6 +18,8 @@
 
 #include "JoystickDriver.c"  //Include file to "handle" the Bluetooth messages.
 
+#include "hitechnic-irseeker-v2.h"
+
 void initializeRobot() //sets motor encoders to 0
 {
 		nMotorEncoder[leftTop] = 0;
