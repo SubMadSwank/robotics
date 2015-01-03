@@ -10,6 +10,7 @@
 #pragma config(Motor,  mtr_S2_C1_2,     R2,      tmotorTetrix, openLoop, reversed)
 
 #include "JoystickDriver.c"  //Include file to "handle" the Bluetooth messages.
+//#include ""
 /////////////////////////
 //   Easy Button Names
 /////////////////////////
@@ -65,61 +66,10 @@ task main(){
 
 	initializeRobot();
 
- 	while (true)
-		{
-		getJoystickSettings(joystick);
-
-		if (joystick.joy1_TopHat == 0){
-		movement(-95);
- 		}//moves forward
-
-		else if (joystick.joy1_TopHat == 2){
-		rotateRight(95);
-  		}//moves cw
-
-  		else if (joystick.joy1_TopHat == 4){
-		movement(95);
-  		}//moves backward
-
-  		else if (joystick.joy1_TopHat == 6){
-  		rotateLeft(95);
-  		}//moves ccw
-
-  		else{
-  			if (abs(joystick.joy1_y1)  > 7 || abs(joystick.joy1_y2) > 7){
-  				motor[L1] = joystick.joy1_y1 * .78125;
-				motor[L2] = joystick.joy1_y1 * .78125;
-				motor[R1] = joystick.joy1_y2 * .78125;
-				motor[R2] = joystick.joy1_y2 * .78125;
-			}
-
-			else{
-				motor[L1] = 0;
-				motor[L2] = 0;
-				motor[R1] = 0;
-				motor[R2] = 0;
-			}
-
-			if (rClick == 1){
-				motor[lift] = 100;
-			}
-
-			else if (rTrig == 1){
-				motor[lift] = -100;
-			}
-
-			else if (a == 1){
-				motor[sweep] = 100;
-			}
-
-			else if (b == 1){
-				motor[sweep] = -100;
-			}
-
-  			else{
-  				motor[lift]= 0;
-  				motor[sweep] = 0;
-  			}
+ 	while (true){
+ 		while(nMotorEncoder[L1] < 2000){
+ 			movement(90);
  		}
+ 		movement(0);
 	}
 }
