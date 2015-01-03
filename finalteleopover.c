@@ -110,8 +110,6 @@ task main(){
 				}
 			}
 
-<<<<<<< HEAD
-=======
 			else if (joy1Btn(1) == 1){
 				if (servo[servo1] == 90){
 					servo[servo1] == 255;
@@ -121,7 +119,6 @@ task main(){
 				}
 			}
 
->>>>>>> origin/Fern
 			else if(joy1Btn(5) == 1){
 				motor[pull] = 50;
 				wait1Msec(200);
