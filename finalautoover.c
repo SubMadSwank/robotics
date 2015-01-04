@@ -35,37 +35,37 @@ int servop = 90;
 
 void initializeRobot() //sets motor encoders to 0
 {
-		nMotorEncoder[leftTop] = 0;
-		nMotorEncoder[rightTop] = 0;
-		servo[servo1] = servcl;
-		return;
+	nMotorEncoder[leftTop] = 0;
+	nMotorEncoder[rightTop] = 0;
+	servo[servo1] = servcl;
+	return;
 }
 
 void robotMotion(int speed)
 {
-		motor[leftTop] = speed;
-		motor[leftBot] = speed;
-		motor[rightTop] = speed;
-		motor[rightBot] = speed;
-		//moves robot all in the same direction
+	motor[leftTop] = speed;
+	motor[leftBot] = speed;
+	motor[rightTop] = speed;
+	motor[rightBot] = speed;
+	//moves robot all in the same direction
 }
 
 void rotateLeft(int speed)
 {
-		motor[leftTop] = speed;
-		motor[leftBot] = speed;
-		motor[rightTop] = -speed;
-		motor[rightBot] = -speed;
-		//rotates left ccw
+	motor[leftTop] = speed;
+	motor[leftBot] = speed;
+	motor[rightTop] = -speed;
+	motor[rightBot] = -speed;
+	//rotates left ccw
 }
 
 void rotateRight(int speed)
 {
-		motor[leftTop] = -speed;
-		motor[leftBot] = -speed;
-		motor[rightTop] = speed;
-		motor[rightBot] = speed;
-		//rotates right cw
+	motor[leftTop] = -speed;
+	motor[leftBot] = -speed;
+	motor[rightTop] = speed;
+	motor[rightBot] = speed;
+	//rotates right cw
 }
 
 task main(){
