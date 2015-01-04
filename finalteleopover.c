@@ -102,31 +102,27 @@ task main(){
 			} //when "b" is pressed, the sweeper spins in the opposite direction
 
 			else if (joy1Btn(1) == 1){
-				if (servo[servo1] == 90){
-					servo[servo1] == 255;
+				if(servo[servo1] == 90){
+					servo[servo1] = 255;
+					wait10Msec(75);
 				}
-				else if (servo[servo1] == 255){
+				else{
 					servo[servo1] = 90;
+					wait10Msec(75);
 				}
 			}
-
-			else if (joy1Btn(1) == 1){
-				if (servo[servo1] == 90){
-					servo[servo1] == 255;
-				}
-				else if (servo[servo1] == 255){
-					servo[servo1] = 90;
-				}
-			}
+			//else if (joy1Btn(4) == 1){
+			//		servo[servo1] = 90;
+			//	}
 
 			else if(joy1Btn(5) == 1){
-				motor[pull] = 50;
+				motor[pull] = 100;
 				wait1Msec(200);
 				motor[pull] = 0;
 			}
 
 			else if(joy1Btn(7) == 1){
-				motor[pull] = -50;
+				motor[pull] = -100;
 				wait1Msec(200);
 				motor[pull] = 0;
 			}
