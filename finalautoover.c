@@ -74,22 +74,31 @@ task main(){
 		robotMotion(-90);
 	}
 	robotMotion(0);
+
+
 	while(nMotorEncoder[lift] < lif60){
 		motor[lift] = 90;
 	}
 	nMotorEncoder[lift] = 0;
+
+
 	//add motorA to lock on to the cylinder please
 	servo[servo1] = servop;
 	wait1Msec(1000);
 	servo[servo1] = servcl;
+
+
 	while(nMotorEncoder[lift] < -lift60){
 		motor[lift] = -90;
 	}
 	nMotorEncoder[lift] = 0;
+
+
 	rotateRight(60);
 	wait1Msec(1000);
 	robotMotion(0);
-	wait1Msec(100);
+
+	//wait1Msec(100);
 	nMotorEncoder[R1] = 0;
 	while(nMotorEncoder[R1] < 1000){
 		robotMotion(90);
