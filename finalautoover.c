@@ -78,6 +78,7 @@ task main(){
 		motor[lift] = 90;
 	}
 	nMotorEncoder[lift] = 0;
+	//add motorA to lock on to the cylinder please
 	servo[servo1] = servop;
 	wait1Msec(1000);
 	servo[servo1] = servcl;
