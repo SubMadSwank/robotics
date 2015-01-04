@@ -116,13 +116,13 @@ task main(){
 			//	}
 
 			else if(joy1Btn(5) == 1){
-				motor[pull] = 100;
+				motor[pull] = 80;
 				wait1Msec(200);
 				motor[pull] = 0;
 			}
 
 			else if(joy1Btn(7) == 1){
-				motor[pull] = -100;
+				motor[pull] = -80;
 				wait1Msec(200);
 				motor[pull] = 0;
 			}
