@@ -24,12 +24,20 @@ int _dirAC = 0;
 int acS1, acS2, acS3, acS4, acS5 = 0;
 tHTIRS2DSPMode _mode = DSP_1200;
 
+int dropl = 1000; //check please
+
+int lift30 = 500; //check please
+int lift60 = 1000; //check please
+int lift90 = 1500; //check please
+
+int servcl = 255;
+int servop = 90;
 
 void initializeRobot() //sets motor encoders to 0
 {
 		nMotorEncoder[leftTop] = 0;
 		nMotorEncoder[rightTop] = 0;
-		servo[servo1] = 90;
+		servo[servo1] = servcl;
 		return;
 }
 
@@ -62,4 +70,28 @@ void rotateRight(int speed)
 
 task main(){
 	//place shit here boys
+	while(nMotorEncoder[R1] < dropl){
+		robotMotion(-90);
+	}
+	robotMotion(0);
+	while(nMotorEncoder[lift] < lif60){
+		motor[lift] = 90;
+	}
+	nMotorEncoder[lift] = 0;
+	servo[servo1] = servop;
+	wait1Msec(1000);
+	servo[servo1] = servcl;
+	while(nMotorEncoder[lift] < -lift60){
+		motor[lift] = -90;
+	}
+	nMotorEncoder[lift] = 0;
+	rotateRight(60);
+	wait1Msec(1000);
+	robotMotion(0);
+	wait1Msec(100);
+	nMotorEncoder[R1] = 0;
+	while(nMotorEncoder[R1] < 1000){
+		robotMotion(90);
+	}
+	robotMotion(0);
 }
