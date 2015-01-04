@@ -104,13 +104,14 @@ task main(){
 			else if (joy1Btn(1) == 1){
 				if(servo[servo1] == 90){
 					servo[servo1] = 255;
-					wait10Msec(75);
+					wait10Msec(50);
 				}
 				else{
 					servo[servo1] = 90;
-					wait10Msec(75);
+					wait10Msec(50);
 				}
 			}
+
 			//else if (joy1Btn(4) == 1){
 			//		servo[servo1] = 90;
 			//	}
